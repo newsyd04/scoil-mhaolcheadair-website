@@ -13,7 +13,7 @@ export const siteConfig = {
   emailHref: "mailto:office@scoilmhaolcheadair.ie",
   website: "www.scoilmhaolcheadair.ie",
   websiteHref: "https://www.scoilmhaolcheadair.ie",
-  yearEstablished: 2009,
+  yearEstablished: 1991,
   logo,
   crest,
 };
