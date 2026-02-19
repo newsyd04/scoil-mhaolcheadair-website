@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Source+Sans+3:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-navy: #102a4a;
+  --brand-blue: #1f4f84;
+  --brand-green: #20674f;
+  --brand-red: #a43845;
+  --brand-cream: #f8f7f2;
+  --brand-ink: #1f334d;
+  --surface-1: #ffffff;
+  --surface-2: #f2f5fa;
+  --border-soft: #dce3ee;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Source Sans 3", sans-serif;
+  background: linear-gradient(180deg, #f8f7f2 0%, #f3f4f8 100%);
+  color: var(--brand-ink);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Merriweather", serif;
+}
+
+a {
+  color: inherit;
+}
+
+@layer components {
+  .page-shell {
+    @apply min-h-screen;
+  }
+
+  .site-container {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+
+  .section-stack {
+    @apply space-y-8 md:space-y-10;
+  }
+
+  .surface-card {
+    @apply rounded-2xl border border-[var(--border-soft)] bg-[var(--surface-1)] shadow-sm;
+  }
+
+  .surface-soft {
+    @apply rounded-2xl border border-[var(--border-soft)] bg-[var(--surface-2)] shadow-sm;
+  }
+
+  .text-muted {
+    @apply text-slate-600;
+  }
+
+  .link-brand {
+    @apply text-sm font-bold text-[#1f4f84] transition-colors hover:text-[#102a4a] hover:underline;
+  }
+
+  .nav-pill {
+    @apply rounded-full px-3 py-1.5 text-sm font-semibold transition-colors;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-[var(--brand-navy)] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#14345f];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full bg-[var(--brand-green)] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#175541];
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center rounded-full bg-[var(--brand-red)] px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-[#8e313c];
+  }
+}
+
+.calendar-shell {
+  width: 100%;
+}
+
+.home-calendar.react-calendar {
+  width: 100%;
+  max-width: 26rem;
+  border: 1px solid var(--border-soft);
+  font-family: "Source Sans 3", sans-serif;
+  color: var(--brand-ink);
+}
+
+.home-calendar .react-calendar__navigation button {
+  border-radius: 0.5rem;
+  font-weight: 700;
+  color: var(--brand-navy);
+}
+
+.home-calendar .react-calendar__navigation button:enabled:hover,
+.home-calendar .react-calendar__navigation button:enabled:focus {
+  background: #e5edf8;
+}
+
+.home-calendar .react-calendar__month-view__weekdays {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: #49617f;
+}
+
+.home-calendar .react-calendar__tile {
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+
+.home-calendar .react-calendar__tile:enabled:hover,
+.home-calendar .react-calendar__tile:enabled:focus {
+  background: #e7f0fc;
+}
+
+.home-calendar .react-calendar__tile--now {
+  background: #e7f4ed;
+  color: #11422f;
+}
+
+.home-calendar .react-calendar__tile--active {
+  background: var(--brand-navy);
+  color: #fff;
+}

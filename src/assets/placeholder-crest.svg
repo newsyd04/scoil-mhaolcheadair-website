@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="260" viewBox="0 0 220 260" role="img" aria-labelledby="title desc">
+  <title id="title">Scoil Mhaolcheadair Placeholder Crest</title>
+  <desc id="desc">A placeholder school crest featuring navy, green, and red accents.</desc>
+  <path d="M110 10l78 24v84c0 66-48 109-78 132-30-23-78-66-78-132V34l78-24z" fill="#102a4a"/>
+  <path d="M110 27l60 18v70c0 52-36 88-60 107-24-19-60-55-60-107V45l60-18z" fill="#f8f7f2"/>
+  <circle cx="110" cy="95" r="34" fill="#1f6b52"/>
+  <path d="M93 95h34M110 78v34" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <path d="M70 152h80" stroke="#a43845" stroke-width="10" stroke-linecap="round"/>
+  <text x="110" y="188" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#102a4a">SCOIL</text>
+  <text x="110" y="208" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#102a4a">MHAOLCHEADAIR</text>
+</svg>
