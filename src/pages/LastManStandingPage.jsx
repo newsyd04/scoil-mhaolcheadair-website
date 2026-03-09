@@ -33,40 +33,40 @@ export default function LastManStandingPage() {
 
   return (
     <InternalPageLayout
-      title="National League Last Man Standing 2026"
-      subtitle={`Starting Saturday January 24th 2026 in aid of ${siteConfig.name}.`}
+      title="Sraith Náisiúnta Last Man Standing 2026"
+      subtitle={`Ag tosú Dé Sathairn 24 Eanáir 2026 ar son ${siteConfig.name}.`}
     >
       <SectionCard className="p-5 sm:p-6">
         <div className="grid gap-4 sm:grid-cols-3">
           <article className="surface-soft p-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Entry Fee</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Táille Iontrála</p>
             <p className="mt-1 text-2xl font-extrabold text-[#102a4a]">€10</p>
           </article>
           <article className="surface-soft p-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Prize Pot</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Duais</p>
             <p className="mt-1 text-2xl font-extrabold text-[#102a4a]">€500</p>
           </article>
           <article className="surface-soft p-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Selections Due</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Roghnúcháin Dlite</p>
             <p className="mt-1 text-2xl font-extrabold text-[#102a4a]">Jan 22nd 2026</p>
           </article>
         </div>
 
         <div className="mt-5 flex flex-wrap gap-3">
           <a href={embedForm ? "#enter" : GOOGLE_FORM_URL} target={embedForm ? undefined : "_blank"} rel="noreferrer" className="btn-primary">
-            Enter (Google Form)
+            Iontráil (Google Form)
           </a>
           <a href={ALADDIN_PAYMENT_URL} target="_blank" rel="noreferrer" className="btn-secondary">
-            Pay €10 (Aladdin)
+            Íoc €10 (Aladdin)
           </a>
-          <a href="/latest" className="btn-accent">
-            Follow Progress
+          <a href="/scealta-is-deanai" className="btn-accent">
+            Lean an Dul Chun Cinn
           </a>
         </div>
       </SectionCard>
 
       <SectionCard className="p-5 sm:p-6">
-        <h2 className="text-2xl font-extrabold text-[#102a4a]">Rules & Guidelines</h2>
+        <h2 className="text-2xl font-extrabold text-[#102a4a]">Rialacha & Treoirlínte</h2>
         <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-7 text-slate-700">
           {ruleItems.map((item) => (
             <li key={item}>{item}</li>
@@ -75,11 +75,11 @@ export default function LastManStandingPage() {
       </SectionCard>
 
       <SectionCard id="enter" className="p-5 sm:p-6">
-        <h2 className="text-2xl font-extrabold text-[#102a4a]">Enter</h2>
+        <h2 className="text-2xl font-extrabold text-[#102a4a]">Iontráil</h2>
         {embedForm ? (
           <div className="mt-4 overflow-hidden rounded-xl border border-slate-200">
             <iframe
-              title="Last Man Standing 2026 Entry Form"
+              title="Foirm Iontrála Last Man Standing 2026"
               src={embedUrl}
               className="w-full"
               style={{ height: "min(1100px, 85vh)" }}
@@ -91,16 +91,16 @@ export default function LastManStandingPage() {
           </div>
         ) : (
           <div className="mt-4">
-            <p className="text-sm text-slate-700">On mobile, the form opens in a new tab for a smoother experience.</p>
+            <p className="text-sm text-slate-700">Ar ghléas soghluaiste, osclaítear an fhoirm i gcluaisín nua le haghaidh taithí níos fearr.</p>
             <a href={GOOGLE_FORM_URL} target="_blank" rel="noreferrer" className="btn-primary mt-3">
-              Open Google Form
+              Oscail Google Form
             </a>
           </div>
         )}
       </SectionCard>
 
       <SectionCard className="p-5 sm:p-6">
-        <h2 className="text-2xl font-extrabold text-[#102a4a]">Fixtures by Round</h2>
+        <h2 className="text-2xl font-extrabold text-[#102a4a]">Cluichí de réir Babhta</h2>
         <div className="mt-4 space-y-4">
           {rounds.map((round) => (
             <article key={round.title} className="overflow-hidden rounded-xl border border-slate-200">

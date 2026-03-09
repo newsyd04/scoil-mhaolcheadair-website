@@ -16,7 +16,7 @@ export default function PostDetail() {
         const data = await fetchPost(id);
         if (active) setPost(data);
       } catch {
-        if (active) setError("Could not load post");
+        if (active) setError("Níorbh fhéidir an t-alt a lódáil");
       }
     })();
 
@@ -26,7 +26,7 @@ export default function PostDetail() {
   }, [id]);
 
   if (error) return <p className="mt-10 text-center text-red-700">{error}</p>;
-  if (!post) return <p className="mt-10 text-center text-slate-600">Loading...</p>;
+  if (!post) return <p className="mt-10 text-center text-slate-600">Ag lódáil...</p>;
 
   return (
     <div className="min-h-screen bg-[#f8f7f2] py-12 px-4">
@@ -39,7 +39,7 @@ export default function PostDetail() {
 
         <h1 className="mb-2 text-3xl font-bold text-[#122e54]">{post.title}</h1>
         <p className="mb-4 text-sm text-slate-500">
-          {new Date(post.createdAt).toLocaleDateString()} · {post.type}
+          {new Date(post.createdAt).toLocaleDateString("ga-IE")} · {post.type}
         </p>
 
         <p className="mb-6 whitespace-pre-line leading-relaxed text-slate-700">{post.content}</p>
@@ -53,13 +53,13 @@ export default function PostDetail() {
               rel="noopener noreferrer"
               className="font-semibold text-[#1b4e85] hover:underline"
             >
-              Download Attached File
+              Íoslódáil Comhad Ceangailte
             </a>
           </div>
         ) : null}
 
-        <Link to="/latest" className="text-sm font-bold text-[#1b4e85] hover:underline">
-          ← Back to Latest
+        <Link to="/scealta-is-deanai" className="text-sm font-bold text-[#1b4e85] hover:underline">
+          ← Ar ais go Scéalta is Déanaí
         </Link>
       </div>
     </div>

@@ -7,23 +7,23 @@ import { siteConfig } from "../config/site";
 const contactCards = [
   {
     icon: "fa-envelope",
-    title: "Email",
+    title: "Ríomhphost",
     value: siteConfig.email,
     href: siteConfig.emailHref,
   },
   {
     icon: "fa-globe",
-    title: "Website",
+    title: "Suíomh Gréasáin",
     value: siteConfig.website,
     href: siteConfig.websiteHref,
   },
   {
     icon: "fa-phone",
-    title: "Phone",
+    title: "Fón",
     value: siteConfig.phone,
     href: siteConfig.phoneHref,
   },
-  { icon: "fa-mobile-screen", title: "Mobile", value: siteConfig.mobile },
+  { icon: "fa-mobile-screen", title: "Fón Póca", value: siteConfig.mobile },
 ];
 
 export default function ContactPage() {
@@ -33,12 +33,12 @@ export default function ContactPage() {
 
   return (
     <PageContainer className="py-10">
-      <PageHeading title="Contact Us" subtitle="We are here to help with admissions and general enquiries." />
+      <PageHeading title="Déan Teangabháil Linn" subtitle="Táimid anseo chun cabhrú le hiontrál agus le fiosrúcháin ghinearálta." />
 
       <SectionCard className="p-6 md:p-8">
         <div className="mb-8 flex flex-col items-center gap-4 text-center">
-          <img src={siteConfig.crest} className="h-32 sm:h-40" alt={`${siteConfig.name} crest`} />
-          <p className="max-w-xl text-slate-600">Get in touch with our school office using the contact details below.</p>
+          <img src={siteConfig.crest} className="h-32 sm:h-40" alt={`Suaitheantas ${siteConfig.name}`} />
+          <p className="max-w-xl text-slate-600">Déan teangabháil le hoifig na scoile ag úsáid na sonraí thíos.</p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

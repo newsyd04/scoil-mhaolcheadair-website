@@ -15,6 +15,7 @@ import PolicyPage from "./pages/PolicyPage";
 import AdmissionsPage from "./pages/AdmissionsPage";
 import PostDetail from "./pages/PostDetail";
 import LastManStandingPage from "./pages/LastManStandingPage";
+import GalleryPage from "./pages/GalleryPage";
 
 function App() {
   return (
@@ -23,22 +24,23 @@ function App() {
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-sm focus:font-semibold focus:text-[#102a4a]"
       >
-        Skip to main content
+        Scipeáil go dtí an príomhábhar
       </a>
       <Navbar />
       <main id="main-content">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/about-us" element={<AboutPage />} />
-          <Route path="/parents-information" element={<ParentsInfo />} />
-          <Route path="/latest" element={<LatestPage />} />
+          <Route path="/teangabhail" element={<ContactPage />} />
+          <Route path="/fuinn" element={<AboutPage />} />
+          <Route path="/eolas-do-thuismitheoiri" element={<ParentsInfo />} />
+          <Route path="/scealta-is-deanai" element={<LatestPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/green-flag" element={<GreenFlagPage />} />
-          <Route path="/policies" element={<PolicyPage />} />
-          <Route path="/admissions" element={<AdmissionsPage />} />
-          <Route path="/post/:id" element={<PostDetail />} />
+          <Route path="/bratach-ghlas" element={<GreenFlagPage />} />
+          <Route path="/polasaithe" element={<PolicyPage />} />
+          <Route path="/iontral" element={<AdmissionsPage />} />
+          <Route path="/alt/:id" element={<PostDetail />} />
           <Route path="/last-man-standing" element={<LastManStandingPage />} />
+          <Route path="/gailearai" element={<GalleryPage />} />
           <Route
             path="/post-upload"
             element={

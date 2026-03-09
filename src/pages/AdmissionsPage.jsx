@@ -9,12 +9,12 @@ const AdmissionsPage = () => {
 
   const docs = [
     {
-      title: "Admission Application Form",
+      title: "Foirm Iarratais Iontrála",
       href: "/admissions/Admission Application Form.pdf",
       accent: "#6AA84F",
     },
     {
-      title: "Annual Admissions Notice 2026–2027",
+      title: "Fógra Iontrála Bliantúil 2026–2027",
       href: "/admissions/Annual Admission Notice 2026 2027.pdf",
       accent: "#F5AB00",
     },
@@ -49,7 +49,7 @@ const AdmissionsPage = () => {
             {title}
           </h3>
           <p className="mt-1 text-sm text-gray-500">
-            Opens as a PDF in a new tab.
+            Osclaítear mar PDF i gcluaisín nua.
           </p>
         </div>
       </div>
@@ -59,7 +59,7 @@ const AdmissionsPage = () => {
           className="inline-flex items-center gap-2 text-sm font-semibold"
           style={{ color: accent }}
         >
-          Open document <span aria-hidden="true">↗</span>
+          Oscail cáipéis <span aria-hidden="true">↗</span>
         </span>
       </div>
     </a>
@@ -75,15 +75,15 @@ const AdmissionsPage = () => {
               <img
                 src={crest}
                 className="h-48"
-                alt="Scoil Mhaolcheadair crest"
+                alt="Suaitheantas Scoil Mhaolchéadair"
               />
             </div>
 
             <h2 className="text-4xl font-extrabold text-[#1C2E5A] mb-2">
-              Admissions
+              Iontrál
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Find the key admissions documents and notices below.
+              Aimsigh na cáipéisí agus na fógraí iontrála thíos.
             </p>
           </header>
 
@@ -103,7 +103,7 @@ const AdmissionsPage = () => {
 
             {/* Optional small helper text, matches the About “clean” vibe */}
             <p className="mt-8 text-center text-sm text-gray-500">
-              If you need help with admissions, please contact the school office.
+              Má tá cabhair uait le hiontrál, déan teangabháil le hoifig na scoile le do thoil.
             </p>
           </div>
         </section>

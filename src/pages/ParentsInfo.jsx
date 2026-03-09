@@ -4,28 +4,28 @@ import SectionCard from "../components/layout/SectionCard";
 
 const sections = [
   {
-    id: "parents-association",
-    title: "Parents' Association",
+    id: "cumann-tuismitheoiri",
+    title: "Cumann na dTuismitheoirí",
     content:
-      "We are fortunate to have a very active Parents Association. They are a vital part of the school community. They organise many successful fundraising events throughout the year including Bingo, the Last Man Standing, the Annual School Walk and Communion and Confirmation receptions.",
+      "Tá an t-ádh linn go bhfuil Cumann Tuismitheoirí an-ghníomhach againn. Is cuid ríthábhachtach de phobal na scoile iad. Eagraíonn siad go leor imeachtaí tiomsaithe airgid rathúla i rith na bliana lena n-áirítear Biongó, an Last Man Standing, Siúlóid Bhliantúil na Scoile agus fáiltithe Céad Comaoineach agus Cóineartaithe.",
   },
   {
-    id: "parental-involvement",
-    title: "Parental Involvement",
+    id: "pairtiocht-tuismitheoiri",
+    title: "Páirtíocht Tuismitheoirí",
     content:
-      "As a Catholic school, we believe that the school is not an isolated unit but a union of many people who come together to give it its life and meaning.\n\nThe triple partnership of home, school and parish is essential if the school is to live up to its Mission Statement. We aim to establish this relationship through:\n\n- Encouraging a shared commitment to the success of each individual child\n- Encouraging an ethos of understanding and openness in home-school-parish relationships\n- Helping parents to develop a positive role in complementing and supporting the work of the school in educating their children\n\nParental involvement in the life of the school is encouraged in many ways:\n\n- Through parent/partnership groups working in school\n- Fundraising/ parent helpers\n- Involvement in assemblies, celebrations, concerts, and school Masses\n- Involvement in sacramental preparation\n- School fetes, sports, and gala days",
+      "Mar scoil Chaitliceach, creidimid nach aonad leithlisithe í an scoil ach aontas go leor daoine a thagann le chéile chun beatha agus brí a thabhairt di.\n\nTá an chomhpháirtíocht thriarach idir baile, scoil agus paróiste riachtanach má tá an scoil chun a Ráiteas Misin a chomhlíonadh. Tá sé mar aidhm againn an caidreamh seo a bhunú trí:\n\n- Tiomantas roinnte do rath gach páiste aonair a spreagadh\n- Éiteas tuisceana agus oscailteachta i gcaidrimh baile-scoile-paróiste a chothú\n- Cabhrú le tuismitheoirí ról dearfach a fhorbairt ag comhlánú agus ag tacú le hobair na scoile in oideachas a leanaí\n\nSpreagtar páirtíocht tuismitheoirí i saol na scoile ar go leor bealaí:\n\n- Trí ghrúpaí comhpháirtíochta tuismitheoirí ag obair sa scoil\n- Tiomsú airgid / cúntóirí tuismitheoirí\n- Páirtíocht i dtionóil, ceiliúradh, ceolchoirmeacha agus Aifrinn scoile\n- Páirtíocht in ullmhúchán sacraiminteach\n- Féilte scoile, spórt agus laethanta gála",
   },
   {
-    id: "home-school-liaison",
-    title: "Home / School Liaison",
+    id: "ceangal-baile-scoile",
+    title: "Ceangal Baile / Scoile",
     content:
-      "Frequent communication is of vital importance in developing and nurturing cooperation between home and school. Please refer to the school's Communication Policy in the Policy Section of our website.",
+      "Tá cumarsáid rialta an-tábhachtach chun comhoibriú idir baile agus scoil a fhorbairt agus a chothú. Féach ar Pholasaí Cumarsáide na scoile i Rannóg na bPolasaithe ar ár suíomh gréasáin le do thoil.",
   },
   {
-    id: "routines-info",
-    title: "Routines and General Information",
+    id: "gnathaimh-eolas",
+    title: "Gnáthaimh agus Eolas Ginearálta",
     content:
-      "- School starts at 9.20am and supervision begins at 9:10am.\n- There is a short break at 11.00am and lunch from 1.00pm to 1.30pm.\n- Healthy eating policy applies in school.\n- Junior and Senior Infants are dismissed at 2.00pm; other pupils at 3.00pm.\n- Absences should be communicated to the class teacher.\n- Early collection should be signed out in the office records.",
+      "- Tosaíonn an scoil ag 9.20r.n. agus tosaíonn maoirseacht ag 9:10r.n.\n- Tá sos gearr ag 11.00r.n. agus lón ó 1.00i.n. go 1.30i.n.\n- Tá polasaí ithe sláintiúil i bhfeidhm sa scoil.\n- Scaoiltear Naíonáin Shóisearacha agus Shinsearacha ag 2.00i.n.; daltaí eile ag 3.00i.n.\n- Ba cheart asláithreachtaí a chur in iúl do mhúinteoir an ranga.\n- Ba cheart bailiúchán luath a shíniú amach i dtaifid na hoifige.",
   },
 ];
 
@@ -67,12 +67,12 @@ export default function ParentsInfo() {
 
   return (
     <InternalPageLayout
-      title="Parents' Information"
-      subtitle="Helpful information for families, routines, and home-school communication."
+      title="Eolas do Thuismitheoirí"
+      subtitle="Eolas úsáideach do theaghlaigh, gnáthaimh agus cumarsáid baile-scoile."
     >
       <section className="grid gap-6 lg:grid-cols-12">
         <SectionCard className="p-5 lg:col-span-3">
-          <p className="text-sm font-bold uppercase tracking-wide text-slate-500">On this page</p>
+          <p className="text-sm font-bold uppercase tracking-wide text-slate-500">Ar an leathanach seo</p>
           <ul className="mt-3 space-y-2">
             {toc.map((item) => (
               <li key={item.id}>

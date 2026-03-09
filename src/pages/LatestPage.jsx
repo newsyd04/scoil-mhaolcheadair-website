@@ -32,7 +32,7 @@ export default function LatestPage() {
         if (!active) return;
         setPosts(data);
       } catch {
-        if (active) setError("Error fetching posts");
+        if (active) setError("Earráid ag fáil na n-alt");
       } finally {
         if (active) setLoading(false);
       }
@@ -47,11 +47,11 @@ export default function LatestPage() {
 
   return (
     <InternalPageLayout
-      title="Latest Announcements & Posts"
-      subtitle="Stay updated with school news, events, and announcements."
+      title="Fógraí agus Ailt is Déanaí"
+      subtitle="Fan ar an eolas le nuacht, imeachtaí agus fógraí na scoile."
     >
       <SectionCard className="p-6">
-        <h2 className="text-2xl font-bold text-[#122e54]">Filter by Type</h2>
+        <h2 className="text-2xl font-bold text-[#122e54]">Scag de réir Cineáil</h2>
         <div className="mt-4 flex flex-wrap gap-3">
           {postTypes.map((type) => (
             <button
@@ -70,12 +70,12 @@ export default function LatestPage() {
       </SectionCard>
 
       <div className="space-y-4">
-        {loading ? <p className="text-slate-600">Loading posts...</p> : null}
+        {loading ? <p className="text-slate-600">Ailt á lódáil...</p> : null}
         {error ? <p className="text-red-700">{error}</p> : null}
 
         {!loading && !error && posts.length === 0 ? (
           <SectionCard className="p-6">
-            <p className="text-slate-600">No posts available for the selected filter.</p>
+            <p className="text-slate-600">Níl aon ailt ar fáil don scagaire roghnaithe.</p>
           </SectionCard>
         ) : null}
 
@@ -92,11 +92,11 @@ export default function LatestPage() {
                 </div>
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className="text-2xl font-bold text-[#122e54]">
-                    <Link to={`/post/${post._id}`} className="hover:underline">
+                    <Link to={`/alt/${post._id}`} className="hover:underline">
                       {post.title}
                     </Link>
                   </h3>
-                  <span className="text-sm text-slate-500">{new Date(post.createdAt).toLocaleDateString()}</span>
+                  <span className="text-sm text-slate-500">{new Date(post.createdAt).toLocaleDateString("ga-IE")}</span>
                 </div>
                 <p className="mt-3 text-slate-700">{excerpt(post.content)}</p>
                 <span className="mt-3 inline-block rounded-full bg-[#edf3fb] px-2.5 py-1 text-xs font-semibold text-[#345a89]">

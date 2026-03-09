@@ -32,7 +32,7 @@ const PostUploadPage = () => {
 
     const token = localStorage.getItem("token");
     if (!token) {
-      setError("You must be logged in to post");
+      setError("Ní mór duit a bheith logáilte isteach chun alt a phostáil");
       return;
     }
 
@@ -52,18 +52,18 @@ const PostUploadPage = () => {
 
       const data = await response.json();
       if (response.ok) {
-        setMessage("Post created successfully ✅");
+        setMessage("Alt cruthaithe go rathúil ✅");
         setTitle("");
         setContent("");
         setType("");
         setSelectedImage("");
         setFile(null);
       } else {
-        setError(data.message || "Failed to create post");
+        setError(data.message || "Theip ar chruthú an ailt");
       }
     } catch (err) {
       console.error(err);
-      setError("An error occurred while creating the post");
+      setError("Tharla earráid agus an t-alt á chruthú");
     }
   };
 
@@ -87,17 +87,17 @@ const PostUploadPage = () => {
 
       const data = await response.json();
       if (data.success) {
-        setChangeMessage("Change request sent successfully ✅");
+        setChangeMessage("Iarratas athraithe seolta go rathúil ✅");
         setChangeTitle("");
         setChangeContent("");
         setUrgency("Medium");
         setChangeFile(null);
       } else {
-        setChangeError(data.message || "Failed to send change request ❌");
+        setChangeError(data.message || "Theip ar sheoladh an iarratais athraithe ❌");
       }
     } catch (err) {
       console.error("Error:", err);
-      setChangeError("An error occurred while sending the change request ❌");
+      setChangeError("Tharla earráid agus an t-iarratas athraithe á sheoladh ❌");
     }
   };
 
@@ -109,20 +109,20 @@ const PostUploadPage = () => {
           onSubmit={handlePostSubmit}
           className="bg-white p-8 rounded-xl shadow-lg border border-gray-200"
         >
-          <h2 className="text-2xl font-bold mb-6">Create a New Post</h2>
+          <h2 className="text-2xl font-bold mb-6">Cruthaigh Alt Nua</h2>
           {error && <div className="mb-4 text-red-500">{error}</div>}
           {message && <div className="mb-4 text-green-600">{message}</div>}
 
           <input
             type="text"
-            placeholder="Title"
+            placeholder="Teideal"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             className="w-full p-3 border rounded-lg mb-4"
             required
           />
           <textarea
-            placeholder="Content"
+            placeholder="Ábhar"
             value={content}
             onChange={(e) => setContent(e.target.value)}
             className="w-full p-3 border rounded-lg mb-4"
@@ -131,7 +131,7 @@ const PostUploadPage = () => {
           ></textarea>
           <input
             type="text"
-            placeholder="Type (e.g. Event, Announcement, Newsletter)"
+            placeholder="Cineál (m.sh. Imeacht, Fógra, Nuachtlitir)"
             value={type}
             onChange={(e) => setType(e.target.value)}
             className="w-full p-3 border rounded-lg mb-6"
@@ -156,7 +156,7 @@ const PostUploadPage = () => {
 
           {/* File Upload */}
           <label className="block text-gray-700 mb-2 font-medium">
-            Attach File (optional)
+            Ceangail Comhad (roghnach)
           </label>
           <input
             type="file"
@@ -169,7 +169,7 @@ const PostUploadPage = () => {
             type="submit"
             className="w-full bg-blue-600 text-white font-semibold p-3 rounded-lg hover:bg-blue-700 transition"
           >
-            Submit Post
+            Cuir Alt Isteach
           </button>
         </form>
 
@@ -181,7 +181,7 @@ const PostUploadPage = () => {
           <div className="flex items-center mb-6 gap-2">
             <FileText className="w-6 h-6 text-blue-600" />
             <h2 className="text-2xl font-bold text-gray-800">
-              Submit a Change Request
+              Cuir Iarratas Athraithe Isteach
             </h2>
           </div>
 
@@ -198,14 +198,14 @@ const PostUploadPage = () => {
 
           <input
             type="text"
-            placeholder="Title"
+            placeholder="Teideal"
             value={changeTitle}
             onChange={(e) => setChangeTitle(e.target.value)}
             className="w-full p-3 border rounded-lg mb-4"
             required
           />
           <textarea
-            placeholder="Change Details"
+            placeholder="Sonraí Athraithe"
             value={changeContent}
             onChange={(e) => setChangeContent(e.target.value)}
             className="w-full p-3 border rounded-lg mb-4"
@@ -231,7 +231,7 @@ const PostUploadPage = () => {
           </div>
 
           <label className="block text-gray-700 mb-2 font-medium">
-            Attach Supporting File (optional)
+            Ceangail Comhad Tacaíochta (roghnach)
           </label>
           <input
             type="file"
@@ -244,7 +244,7 @@ const PostUploadPage = () => {
             type="submit"
             className="w-full bg-blue-600 text-white font-semibold p-3 rounded-lg hover:bg-blue-700 transition"
           >
-            Submit Change Request
+            Cuir Iarratas Athraithe Isteach
           </button>
         </form>
       </div>

@@ -15,7 +15,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-sm font-extrabold uppercase tracking-[0.14em] text-white/70">Contact</p>
+          <p className="text-sm font-extrabold uppercase tracking-[0.14em] text-white/70">Teangabháil</p>
           <ul className="mt-3 space-y-2 text-sm text-white/90">
             <li>
               <a href={siteConfig.phoneHref} className="hover:underline">{siteConfig.phone}</a>
@@ -32,21 +32,24 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-sm font-extrabold uppercase tracking-[0.14em] text-white/70">Explore</p>
+          <p className="text-sm font-extrabold uppercase tracking-[0.14em] text-white/70">Brabhsáil</p>
           <div className="mt-3 grid gap-2 text-sm">
             {keyLinks.map((link) => (
               <Link key={link.to} to={link.to} className="text-white/90 hover:text-white hover:underline">
                 {link.label}
               </Link>
             ))}
+            <Link to="/gailearai" className="text-white/90 hover:text-white hover:underline">
+              Gailearaí
+            </Link>
           </div>
         </div>
       </div>
 
       <div className="border-t border-white/20 py-4 text-center text-xs font-semibold text-white/75">
-        <p>&copy; {siteConfig.yearEstablished}–{year} {siteConfig.name}. All rights reserved.</p>
+        <p>&copy; {siteConfig.yearEstablished}–{year} {siteConfig.name}. Gach ceart ar cosaint.</p>
         <p className="mt-1">
-          Designed and developed by{" "}
+          Deartha agus forbartha ag{" "}
           <a href="https://daranewso.me" target="_blank" rel="noreferrer" className="underline hover:text-white">
             Dara Newsome
           </a>

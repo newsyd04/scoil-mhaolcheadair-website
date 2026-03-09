@@ -18,12 +18,12 @@ const GreenFlagPage = () => {
             {/* Fun Header */}
             <header className="text-center mb-8">
               <h2 className="text-4xl md:text-5xl font-sketch text-green-700 mb-4">
-                Our Green Flag Initiative
+                Ár dTionscnamh Bratach Ghlas
               </h2>
               <p className="text-gray-700 text-lg max-w-3xl mx-auto leading-relaxed">
-                We’re on a mission to help the planet! 🌍  
-                By recycling, saving energy, and looking after nature, our school
-                is working towards a <strong>Green Flag Award</strong>.
+                Táimid ar mhisean chun cabhrú leis an bpláinéad! 🌍
+                Trí athchúrsáil, fuinneamh a shábháil agus aire a thabhairt don nádúr, tá ár scoil
+                ag obair i dtreo <strong>Gradam na Brataí Glaise</strong>.
               </p>
             </header>
 
@@ -31,23 +31,23 @@ const GreenFlagPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               <div className="p-6 bg-white rounded-2xl shadow-md text-center">
                 <span className="text-4xl">♻️</span>
-                <h3 className="text-xl font-bold text-green-600 mt-2">Reduce Waste</h3>
+                <h3 className="text-xl font-bold text-green-600 mt-2">Laghdaigh Dramhaíl</h3>
                 <p className="text-gray-600 mt-1">
-                  We recycle paper, plastic and cut down on rubbish.
+                  Athchúrsálaimid páipéar, plaisteach agus laghdaímid bruscar.
                 </p>
               </div>
               <div className="p-6 bg-white rounded-2xl shadow-md text-center">
                 <span className="text-4xl">💡</span>
-                <h3 className="text-xl font-bold text-green-600 mt-2">Save Energy</h3>
+                <h3 className="text-xl font-bold text-green-600 mt-2">Sábháil Fuinneamh</h3>
                 <p className="text-gray-600 mt-1">
-                  Turning off lights and using energy wisely every day.
+                  Soilse a mhúchadh agus fuinneamh a úsáid go ciallmhar gach lá.
                 </p>
               </div>
               <div className="p-6 bg-white rounded-2xl shadow-md text-center">
                 <span className="text-4xl">🌸</span>
-                <h3 className="text-xl font-bold text-green-600 mt-2">Love Nature</h3>
+                <h3 className="text-xl font-bold text-green-600 mt-2">Grá don Nádúr</h3>
                 <p className="text-gray-600 mt-1">
-                  Planting flowers, protecting wildlife, and keeping our school green.
+                  Bláthanna a chur, fiadhúlra a chosaint agus ár scoil a choinneáil glas.
                 </p>
               </div>
             </div>
@@ -55,10 +55,10 @@ const GreenFlagPage = () => {
             {/* Gallery */}
             <div>
               <h3 className="text-3xl font-sketch text-green-700 text-center mb-6">
-                Our Eco Projects 📸
+                Ár dTionscadail Éiceolaíocha 📸
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {["Placeholder 1", "Placeholder 2", "Placeholder 3", "Placeholder 4", "Placeholder 5", "Placeholder 6"].map(
+                {["Áit 1", "Áit 2", "Áit 3", "Áit 4", "Áit 5", "Áit 6"].map(
                   (label, index) => (
                     <div
                       key={index}

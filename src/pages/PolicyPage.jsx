@@ -9,17 +9,17 @@ const PolicyPage = () => {
 
   const docs = [
     {
-      title: "Bí Cineálta Policy",
+      title: "Polasaí Bí Cineálta",
       href: "/policies/Bí Cineálta Policy.pdf",
       accent: "#E45C7A",
     },
     {
-      title: "Admissions Policy",
+      title: "Polasaí Iontrála",
       href: "/policies/Admission Policy of Scoil Bhreac chluain.pdf",
       accent: "#F5AB00",
     },
     {
-      title: "Communication Policy",
+      title: "Polasaí Cumarsáide",
       href: "/policies/PARENTSTAFF COMMUNICATION POLICY.pdf",
       accent: "#6AA84F",
     },
@@ -53,13 +53,13 @@ const PolicyPage = () => {
           <h3 className="text-lg sm:text-xl font-extrabold text-gray-900 leading-snug">
             {title}
           </h3>
-          <p className="mt-1 text-sm text-gray-500">Opens as a PDF in a new tab.</p>
+          <p className="mt-1 text-sm text-gray-500">Osclaítear mar PDF i gcluaisín nua.</p>
         </div>
       </div>
 
       <div className="mt-1">
         <span className="inline-flex items-center gap-2 text-sm font-semibold" style={{ color: accent }}>
-          Open document <span aria-hidden="true">↗</span>
+          Oscail cáipéis <span aria-hidden="true">↗</span>
         </span>
       </div>
     </a>
@@ -72,12 +72,12 @@ const PolicyPage = () => {
           {/* Header (matches your About/Admissions style) */}
           <header className="text-center mb-8">
             <div className="flex items-center justify-center mb-4">
-              <img src={crest} className="h-48" alt="Scoil Mhaolcheadair crest" />
+              <img src={crest} className="h-48" alt="Suaitheantas Scoil Mhaolchéadair" />
             </div>
 
-            <h2 className="text-4xl font-extrabold text-[#1C2E5A] mb-2">School Policies</h2>
+            <h2 className="text-4xl font-extrabold text-[#1C2E5A] mb-2">Polasaithe na Scoile</h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Download and view key school policies below.
+              Íoslódáil agus féach ar pholasaithe na scoile thíos.
             </p>
           </header>
 
@@ -92,7 +92,7 @@ const PolicyPage = () => {
             </div>
 
             <p className="text-center text-sm text-gray-500">
-              If you need another policy document, please contact the school office.
+              Má tá cáipéis pholasaí eile ag teastáil uait, déan teangabháil le hoifig na scoile le do thoil.
             </p>
           </div>
         </section>

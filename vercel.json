@@ -1,5 +1,15 @@
 {
-    "rewrites": [
-      { "source": "/(.*)", "destination": "/index.html" }
-    ]
-  }
+  "redirects": [
+    { "source": "/about-us", "destination": "/fuinn", "permanent": true },
+    { "source": "/admissions", "destination": "/iontral", "permanent": true },
+    { "source": "/policies", "destination": "/polasaithe", "permanent": true },
+    { "source": "/latest", "destination": "/scealta-is-deanai", "permanent": true },
+    { "source": "/parents-information", "destination": "/eolas-do-thuismitheoiri", "permanent": true },
+    { "source": "/contact", "destination": "/teangabhail", "permanent": true },
+    { "source": "/green-flag", "destination": "/bratach-ghlas", "permanent": true },
+    { "source": "/post/:id", "destination": "/alt/:id", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

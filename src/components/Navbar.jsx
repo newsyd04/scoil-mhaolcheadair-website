@@ -42,7 +42,7 @@ export default function Navbar() {
             </a>
           </div>
           <Link to="/login" className="hover:underline">
-            Staff Login
+            Logáil Isteach
           </Link>
         </div>
       </div>
@@ -55,7 +55,7 @@ export default function Navbar() {
         <button
           onClick={() => setOpen((v) => !v)}
           className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[#0f2748] shadow-sm transition-colors hover:bg-slate-50 md:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? "Dún roghchlár" : "Oscail roghchlár"}
           aria-expanded={open}
           aria-controls="mobile-site-navigation"
         >
@@ -72,7 +72,7 @@ export default function Navbar() {
       {open ? (
         <div className="site-container pb-4 md:hidden">
           <nav id="mobile-site-navigation" className="rounded-2xl border border-slate-200 bg-white p-3 shadow-md">
-            <p className="px-2 text-xs font-bold uppercase tracking-[0.16em] text-[#5c7390]">Menu</p>
+            <p className="px-2 text-xs font-bold uppercase tracking-[0.16em] text-[#5c7390]">Roghchlár</p>
             {navLinks.map((item) => (
               <NavLink
                 key={item.to}

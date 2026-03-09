@@ -24,7 +24,7 @@ export default function LoginPage() {
       localStorage.setItem("token", data.token);
       navigate("/post-upload");
     } catch (err) {
-      setError(err.message || "Login failed");
+      setError(err.message || "Theip ar an logáil isteach");
     } finally {
       setSubmitting(false);
     }
@@ -36,14 +36,14 @@ export default function LoginPage() {
         <div className="mb-6 flex justify-center">
           <img src={siteConfig.crest} className="h-24 sm:h-28" alt={`${siteConfig.name} crest`} />
         </div>
-        <h1 className="mb-2 text-center text-2xl font-extrabold text-[#0f2748]">Staff Login</h1>
-        <p className="mb-6 text-center text-sm text-slate-600">{siteConfig.name} administration portal</p>
+        <h1 className="mb-2 text-center text-2xl font-extrabold text-[#0f2748]">Logáil Isteach</h1>
+        <p className="mb-6 text-center text-sm text-slate-600">Tairseach riaracháin {siteConfig.name}</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           {error ? <div className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{error}</div> : null}
 
           <div>
-            <label className="mb-1 block text-sm font-semibold text-slate-700" htmlFor="username">Username</label>
+            <label className="mb-1 block text-sm font-semibold text-slate-700" htmlFor="username">Ainm Úsáideora</label>
             <input
               id="username"
               type="text"
@@ -55,7 +55,7 @@ export default function LoginPage() {
           </div>
 
           <div>
-            <label className="mb-1 block text-sm font-semibold text-slate-700" htmlFor="password">Password</label>
+            <label className="mb-1 block text-sm font-semibold text-slate-700" htmlFor="password">Pasfhocal</label>
             <input
               id="password"
               type="password"
@@ -67,7 +67,7 @@ export default function LoginPage() {
           </div>
 
           <button type="submit" disabled={submitting} className="btn-primary w-full disabled:opacity-70">
-            {submitting ? "Signing in..." : "Login"}
+            {submitting ? "Ag logáil isteach..." : "Logáil Isteach"}
           </button>
         </form>
       </div>

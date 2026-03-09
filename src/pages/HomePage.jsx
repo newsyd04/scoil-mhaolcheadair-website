@@ -2,9 +2,9 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import slideOne from "../assets/slide1.jpg";
-import slideTwo from "../assets/slide2.jpg";
-import slideThree from "../assets/slide3.jpg";
+import slideOne from "../assets/slide1.png";
+import slideTwo from "../assets/slide2.jpeg";
+import slideThree from "../assets/slide3.jpeg";
 import fallback from "../assets/fallback.jpg";
 import { fetchPosts } from "../lib/api";
 import { siteConfig } from "../config/site";
@@ -12,7 +12,7 @@ import PageContainer from "../components/layout/PageContainer";
 import SectionCard from "../components/layout/SectionCard";
 
 function formatDate(value) {
-  return new Date(value).toLocaleDateString(undefined, {
+  return new Date(value).toLocaleDateString("ga-IE", {
     day: "numeric",
     month: "short",
     year: "numeric",
@@ -27,18 +27,18 @@ function excerpt(text = "", len = 150) {
 const slides = [
   {
     image: slideOne,
-    headline: `Welcome to ${siteConfig.name}`,
-    subtitle: "A caring and ambitious school where pupils are known, supported, and encouraged.",
+    headline: "Mol an óige 's tiocfaidh sí",
+    subtitle: "Ag ceiliúradh foghlama, pobail agus rath na ndaltaí i rith na scoilbhliana.",
   },
   {
     image: slideTwo,
-    headline: "Learning, Belonging, and Growth",
-    subtitle: "Discover school news, events, admissions information, and life at Scoil Mhaolcheadair.",
+    headline: `Céad Fáilte go ${siteConfig.name}`,
+    subtitle: "Scoil fháilteach uaillmhianach ina n-aithnítear, ina dtacaítear le agus ina spreagtar gach dalta.",
   },
   {
     image: slideThree,
-    headline: `Growing Together at ${siteConfig.name}`,
-    subtitle: "Celebrating learning, community, and pupil success throughout the school year.",
+    headline: "Bunscoil Gaeltachta Caitleacach meascaithe suite i gcroílár Chorca Dhuibhne",
+    subtitle: "",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function HomePage() {
         const sorted = [...allPosts].sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         setPosts(sorted.slice(0, 4));
       } catch (err) {
-        if (active) setError("Could not load latest posts.");
+        if (active) setError("Níorbh fhéidir na hailt is déanaí a lódáil.");
       } finally {
         if (active) setLoading(false);
       }
@@ -102,14 +102,14 @@ export default function HomePage() {
 
         <PageContainer className="relative pb-10 pt-4 sm:py-14 md:py-24">
           <div className="max-w-3xl rounded-3xl bg-black/45 p-5 text-white shadow-2xl backdrop-blur-[2px] sm:p-7 md:bg-transparent md:p-0 md:shadow-none md:backdrop-blur-0">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/85 sm:text-sm">Primary School in Kerry</p>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/85 sm:text-sm">Bunscoil Ghaeltachta i gCiarraí</p>
             <h1 className="mt-2 text-3xl font-extrabold leading-tight sm:text-4xl md:text-6xl">{slides[index].headline}</h1>
             <p className="mt-3 max-w-xl text-sm leading-6 text-white/95 sm:text-base sm:leading-7 md:mt-4 md:text-lg">
               {slides[index].subtitle}
             </p>
             <div className="mt-5 flex gap-3 sm:mt-6 md:mt-8">
-              <Link to="/admissions" className="btn-secondary flex-1 text-center sm:flex-none">Admissions</Link>
-              <Link to="/latest" className="btn-accent flex-1 text-center sm:flex-none">Latest Updates</Link>
+              <Link to="/iontral" className="btn-secondary flex-1 text-center sm:flex-none">Iontrál</Link>
+              <Link to="/scealta-is-deanai" className="btn-accent flex-1 text-center sm:flex-none">Scéalta is Déanaí</Link>
             </div>
           </div>
         </PageContainer>
@@ -122,13 +122,13 @@ export default function HomePage() {
             <div>
               <h2 className="text-2xl font-extrabold text-[#0f2748] sm:text-3xl md:text-4xl">{siteConfig.name}</h2>
               <p className="mt-3 text-sm leading-7 text-muted sm:text-base">
-                {siteConfig.name} serves local families. We aim to provide a safe, inclusive,
-                and high-quality learning environment where each child can flourish.
+                Freastalaíonn {siteConfig.name} ar theaghlaigh áitiúla. Tá sé mar aidhm againn timpeallacht
+                shábháilte, chuimsitheach agus ardchaighdeánach foghlama a chur ar fáil ina mbláthóidh gach páiste.
               </p>
               <div className="mt-4 flex flex-wrap gap-2">
-                <span className="rounded-full bg-[#e9f1fb] px-3 py-1 text-xs font-bold text-[#12325d]">Established {siteConfig.yearEstablished}</span>
-                <span className="rounded-full bg-[#e8f4ee] px-3 py-1 text-xs font-bold text-[#1f5d47]">Inclusive Learning</span>
-                <span className="rounded-full bg-[#f3edf5] px-3 py-1 text-xs font-bold text-[#5b3b71]">Community Focused</span>
+                <span className="rounded-full bg-[#e9f1fb] px-3 py-1 text-xs font-bold text-[#12325d]">Bunaithe {siteConfig.yearEstablished}</span>
+                <span className="rounded-full bg-[#e8f4ee] px-3 py-1 text-xs font-bold text-[#1f5d47]">Foghlaim Chuimsitheach</span>
+                <span className="rounded-full bg-[#f3edf5] px-3 py-1 text-xs font-bold text-[#5b3b71]">Dírithe ar an bPobal</span>
               </div>
             </div>
           </div>
@@ -137,24 +137,24 @@ export default function HomePage() {
         <SectionCard className="surface-soft border-0 p-5 sm:p-6 md:p-8">
           <div className="grid gap-6 md:grid-cols-[1.2fr_1fr] md:gap-8">
             <div>
-              <h2 className="text-2xl font-extrabold text-[#0f2748] sm:text-3xl">Why Families Choose Scoil Mhaolcheadair</h2>
+              <h2 className="text-2xl font-extrabold text-[#0f2748] sm:text-3xl">Cén Fáth a Roghnaíonn Teaghlaigh {siteConfig.name}</h2>
               <p className="mt-3 text-sm leading-7 text-muted sm:text-base">
-                Our staff combine strong teaching with a warm school culture so pupils are known personally and supported academically.
-                We balance literacy, numeracy, wellbeing, and active learning from junior infants through to sixth class.
+                Cumasaíonn ár bhfoireann teagasc láidir le cultúr scoile te ionas go n-aithnítear gach dalta go pearsanta agus go dtacaítear leo go hacadúil.
+                Cothromaímid litearthacht, uimhríocht, folláine agus foghlaim ghníomhach ó naíonáin shóisearacha go rang a sé.
               </p>
             </div>
             <div className="grid gap-3">
               <div className="rounded-xl border border-[#d7e0ef] bg-white p-4">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#4f6786]">School Ethos</p>
-                <p className="mt-1 text-sm text-[#1c3558]">Care, respect, and high expectations for every child.</p>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#4f6786]">Éiteas na Scoile</p>
+                <p className="mt-1 text-sm text-[#1c3558]">Cúram, meas agus ionchais arda do gach páiste.</p>
               </div>
               <div className="rounded-xl border border-[#d7e0ef] bg-white p-4">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#4f6786]">Parent Partnership</p>
-                <p className="mt-1 text-sm text-[#1c3558]">Clear communication and practical support for families.</p>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#4f6786]">Comhpháirtíocht le Tuismitheoirí</p>
+                <p className="mt-1 text-sm text-[#1c3558]">Cumarsáid shoiléir agus tacaíocht phraiticiúil do theaghlaigh.</p>
               </div>
               <div className="rounded-xl border border-[#d7e0ef] bg-white p-4">
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#4f6786]">Pupil Experience</p>
-                <p className="mt-1 text-sm text-[#1c3558]">A safe environment where children belong and gain confidence.</p>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#4f6786]">Taithí na nDaltaí</p>
+                <p className="mt-1 text-sm text-[#1c3558]">Timpeallacht shábháilte ina mbaineann páistí le chéile agus ina bhfaigheann siad muinín.</p>
               </div>
             </div>
           </div>
@@ -163,15 +163,15 @@ export default function HomePage() {
         <section className="grid gap-8 lg:grid-cols-[2fr_1fr]">
           <SectionCard className="p-5 sm:p-6">
             <div className="mb-5 flex items-center justify-between">
-              <h2 className="text-2xl font-extrabold text-[#0f2748] sm:text-3xl">Latest News</h2>
-              <Link to="/latest" className="link-brand">View all</Link>
+              <h2 className="text-2xl font-extrabold text-[#0f2748] sm:text-3xl">Scéalta is Déanaí</h2>
+              <Link to="/scealta-is-deanai" className="link-brand">Féach ar fad</Link>
             </div>
 
-            {loading ? <p className="text-muted">Loading latest posts...</p> : null}
+            {loading ? <p className="text-muted">Ailt is déanaí á lódáil...</p> : null}
             {error ? <p className="text-red-700">{error}</p> : null}
 
             {!loading && !error && latestNews.length === 0 ? (
-              <p className="text-muted">No recent posts yet.</p>
+              <p className="text-muted">Níl aon ailt le déanaí fós.</p>
             ) : null}
 
             {!loading && !error && latestNews.length > 0 ? (
@@ -190,8 +190,8 @@ export default function HomePage() {
                         <span className="text-xs text-slate-500">{formatDate(post.createdAt)}</span>
                       </div>
                       <p className="mt-2 text-sm leading-6 text-muted">{excerpt(post.content)}</p>
-                      <Link to={`/post/${post._id}`} className="mt-3 inline-block link-brand">
-                        Read more
+                      <Link to={`/alt/${post._id}`} className="mt-3 inline-block link-brand">
+                        Léigh tuilleadh
                       </Link>
                     </div>
                   </article>
@@ -201,8 +201,8 @@ export default function HomePage() {
           </SectionCard>
 
           <SectionCard className="p-5 sm:p-6">
-            <h2 className="text-2xl font-extrabold text-[#0f2748]">School Calendar</h2>
-            <p className="mt-2 text-sm text-muted">Important dates and upcoming events.</p>
+            <h2 className="text-2xl font-extrabold text-[#0f2748]">Féilire na Scoile</h2>
+            <p className="mt-2 text-sm text-muted">Dátaí tábhachtacha agus imeachtaí atá le teacht.</p>
             <div className="calendar-shell mt-4 flex justify-center">
               <Calendar value={new Date()} className="home-calendar rounded-xl border border-slate-200" />
             </div>
@@ -210,12 +210,12 @@ export default function HomePage() {
         </section>
 
         <SectionCard className="bg-gradient-to-r from-[#0f2748] to-[#1f6b52] p-6 text-white sm:p-8">
-          <h2 className="text-2xl font-extrabold sm:text-3xl">Join Our School Community</h2>
+          <h2 className="text-2xl font-extrabold sm:text-3xl">Bí Páirteach inár bPobal Scoile</h2>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-white/90 md:text-base">
-            Discover what makes {siteConfig.name} a welcoming place to learn. Get in touch for admissions,
-            school visits, and enrolment support.
+            Faigh amach cad a dhéanann {siteConfig.name} ina áit fháilteach le foghlaim. Déan teangabháil linn
+            faoi iontrál, cuairteanna scoile agus tacaíocht clárúcháin.
           </p>
-          <Link to="/contact" className="btn-accent mt-6">Contact the Office</Link>
+          <Link to="/teangabhail" className="btn-accent mt-6">Déan Teangabháil leis an Oifig</Link>
         </SectionCard>
       </PageContainer>
     </div>
