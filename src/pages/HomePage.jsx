@@ -6,6 +6,7 @@ import slideOne from "../assets/slide1.png";
 import slideTwo from "../assets/slide2.jpeg";
 import slideThree from "../assets/slide3.jpeg";
 import fallback from "../assets/fallback.jpg";
+import claruchanPoster from "../assets/claruchan-2026-2027.png";
 import { fetchPosts } from "../lib/api";
 import { siteConfig } from "../config/site";
 import PageContainer from "../components/layout/PageContainer";
@@ -129,6 +130,58 @@ export default function HomePage() {
                 <span className="rounded-full bg-[#e9f1fb] px-3 py-1 text-xs font-bold text-[#12325d]">Bunaithe {siteConfig.yearEstablished}</span>
                 <span className="rounded-full bg-[#e8f4ee] px-3 py-1 text-xs font-bold text-[#1f5d47]">Foghlaim Chuimsitheach</span>
                 <span className="rounded-full bg-[#f3edf5] px-3 py-1 text-xs font-bold text-[#5b3b71]">Dírithe ar an bPobal</span>
+              </div>
+            </div>
+          </div>
+        </SectionCard>
+
+        <SectionCard className="border-2 border-[#f3722c]/40 bg-gradient-to-br from-[#fff6ec] to-[#fde4c8] p-5 sm:p-6 md:p-8">
+          <div className="grid items-center gap-6 md:grid-cols-[260px_1fr] md:gap-10">
+            <a
+              href="/iontral"
+              className="group block overflow-hidden rounded-2xl border border-[#e3c39a] bg-white shadow-md transition hover:shadow-xl"
+              aria-label="Foirm iarratais Clárúcháin 2026/2027"
+            >
+              <img
+                src={claruchanPoster}
+                alt="Póstaer Clárúcháin Scoil Mhaolchéadair 2026/2027"
+                className="block h-auto w-full transition-transform duration-500 group-hover:scale-[1.02]"
+                loading="lazy"
+              />
+            </a>
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c2410c]">
+                Clárúchán 2026/2027
+              </p>
+              <h2 className="mt-2 text-2xl font-extrabold text-[#0f2748] sm:text-3xl md:text-4xl">
+                Ag glacadh le hiarratais anois
+              </h2>
+              <p className="mt-3 text-sm leading-7 text-[#3b3530] sm:text-base">
+                Tá {siteConfig.name} ag glacadh le hiarratais don scoilbhliain
+                2026/2027. Cuir ríomhphost nó déan glaoch chun foirm iarratais
+                a fháil agus chun bualadh isteach chuig an scoil.
+              </p>
+              <ul className="mt-4 space-y-1.5 text-sm text-[#1c3558]">
+                <li className="flex items-start gap-2">
+                  <span aria-hidden className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#f3722c]" />
+                  Bunscoil Ghaeltachta ar an Muirígh
+                </li>
+                <li className="flex items-start gap-2">
+                  <span aria-hidden className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#f3722c]" />
+                  Lá scoile go 5:30 ó Luan go hAoine · Scéim NCS ar fáil
+                </li>
+                <li className="flex items-start gap-2">
+                  <span aria-hidden className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#f3722c]" />
+                  Tús: Meán Fómhair 2026
+                </li>
+              </ul>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link to="/iontral" className="btn-accent">
+                  Déan Iarratas
+                </Link>
+                <Link to="/teangabhail" className="btn-secondary">
+                  Cuir Ceist
+                </Link>
               </div>
             </div>
           </div>
