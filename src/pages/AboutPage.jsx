@@ -1,39 +1,7 @@
 import { useEffect } from "react";
 import crest from "../assets/scoil-crest.png";
 import ProfileGrid from "../components/sections/ProfileGrid";
-
-const placeholderImage =
-  "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fisobarscience-1bfd8.kxcdn.com%2Fwp-content%2Fuploads%2F2020%2F09%2Fdefault-profile-picture1.jpg&f=1&nofb=1&ipt=16c4f69f00caa12820ed5e58afdea3582c086a204a901abb7d890a9a7987a5c2";
-
-const staffMembers = [
-  { name: "Ainm Ionadaí", title: "Príomhoide", image: placeholderImage },
-  { name: "Ainm Ionadaí", title: "Leas-Phríomhoide", image: placeholderImage },
-  { name: "Ainm Ionadaí", title: "Rúnaí na Scoile", image: placeholderImage },
-  { name: "Ainm Ionadaí", title: "Naoináin Bheaga / Mhóra", image: placeholderImage },
-  { name: "Ainm Ionadaí", title: "Rang 1/2", image: placeholderImage },
-  { name: "Ainm Ionadaí", title: "Rang 3/4", image: placeholderImage },
-  { name: "Ainm Ionadaí", title: "Rang 3/4", image: placeholderImage },
-  { name: "Ainm Ionadaí", title: "Rang 5/6", image: placeholderImage },
-];
-
-const supportTeams = [
-  { name: "Foireann Oideachais Speisialta", members: "Ainm Ionadaí" },
-  { name: "Foireann CRS", members: "Ainm Ionadaí" },
-  { name: "Múinteoir Béarla mar Theanga Bhreise", members: "Ainm Ionadaí" },
-  { name: "Tionlacan Bus", members: "Ainm Ionadaí" },
-  { name: "Airíoch", members: "Ainm Ionadaí" },
-];
-
-const boardMembers = [
-  { name: "Ainm Ionadaí", title: "Cathaoirleach" },
-  { name: "Ainm Ionadaí", title: "Ainmní an Phátrúin" },
-  { name: "Ainm Ionadaí", title: "Príomhoide na Scoile" },
-  { name: "Ainm Ionadaí", title: "Ainmní na Múinteoirí" },
-  { name: "Ainm Ionadaí", title: "Ainmní na dTuismitheoirí" },
-  { name: "Ainm Ionadaí", title: "Ainmní na dTuismitheoirí" },
-  { name: "Ainm Ionadaí", title: "Ainmní an Phobail" },
-  { name: "Ainm Ionadaí", title: "Ainmní an Phobail" },
-];
+import { staffMembers, supportTeams, boardMembers } from "../data/aboutData";
 
 const AboutPage = () => {
   useEffect(() => {
