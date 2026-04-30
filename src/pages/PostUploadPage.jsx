@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import { FileText } from "lucide-react";
+import React, { useState, useEffect, useCallback } from "react";
+import { FileText, Trash2 } from "lucide-react";
 import lmsImg from "/lms.png";
 import eventImg from "/event.jpg";
 import announcementImg from "/announcement.jpg";
 import newsletterImg from "/newsletter.png";
-import { API_BASE as baseUrl } from "../lib/api";
+import { API_BASE as baseUrl, fetchPosts, deletePost } from "../lib/api";
 
 const PostUploadPage = () => {
   const [title, setTitle] = useState("");
@@ -23,6 +23,50 @@ const PostUploadPage = () => {
 
   const stockImages = [lmsImg, eventImg, announcementImg, newsletterImg];
   const [selectedImage, setSelectedImage] = useState("");
+
+  // Manage-existing-posts section
+  const [posts, setPosts] = useState([]);
+  const [postsLoading, setPostsLoading] = useState(false);
+  const [postsError, setPostsError] = useState("");
+  const [deletingId, setDeletingId] = useState(null);
+
+  const reloadPosts = useCallback(async () => {
+    setPostsLoading(true);
+    setPostsError("");
+    try {
+      const all = await fetchPosts();
+      const sorted = [...all].sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      );
+      setPosts(sorted);
+    } catch (err) {
+      setPostsError("Níorbh fhéidir na hailt a lódáil");
+    } finally {
+      setPostsLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    reloadPosts();
+  }, [reloadPosts]);
+
+  const handleDelete = async (post) => {
+    const token = localStorage.getItem("token");
+    if (!token) return;
+    const confirmed = window.confirm(
+      `An bhfuil tú cinnte gur mhaith leat "${post.title}" a scriosadh?`
+    );
+    if (!confirmed) return;
+    setDeletingId(post._id);
+    try {
+      await deletePost(post._id, token);
+      setPosts((prev) => prev.filter((p) => p._id !== post._id));
+    } catch (err) {
+      window.alert(err.message || "Theip ar scriosadh an ailt");
+    } finally {
+      setDeletingId(null);
+    }
+  };
 
   // ==================== CREATE POST ====================
   const handlePostSubmit = async (e) => {
@@ -58,6 +102,7 @@ const PostUploadPage = () => {
         setType("");
         setSelectedImage("");
         setFile(null);
+        reloadPosts();
       } else {
         setError(data.message || "Theip ar chruthú an ailt");
       }
@@ -247,6 +292,72 @@ const PostUploadPage = () => {
             Cuir Iarratas Athraithe Isteach
           </button>
         </form>
+      </div>
+
+      {/* ==================== MANAGE EXISTING POSTS ==================== */}
+      <div className="max-w-6xl mx-auto mt-10">
+        <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-8">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-2xl font-bold text-gray-800">
+              Bainistigh Ailt Reatha
+            </h2>
+            <button
+              type="button"
+              onClick={reloadPosts}
+              className="text-sm text-blue-600 hover:text-blue-800 font-medium"
+            >
+              Athnuaigh
+            </button>
+          </div>
+
+          {postsLoading && (
+            <p className="text-gray-500 text-sm">Ailt á lódáil...</p>
+          )}
+          {postsError && (
+            <p className="text-red-600 bg-red-50 px-3 py-2 rounded-lg text-sm">
+              {postsError}
+            </p>
+          )}
+          {!postsLoading && !postsError && posts.length === 0 && (
+            <p className="text-gray-500 text-sm italic">
+              Níl aon ailt ann go fóill.
+            </p>
+          )}
+
+          {!postsLoading && posts.length > 0 && (
+            <ul className="divide-y divide-gray-200">
+              {posts.map((post) => (
+                <li
+                  key={post._id}
+                  className="flex items-start justify-between gap-4 py-4"
+                >
+                  <div className="min-w-0">
+                    <p className="font-semibold text-gray-900 truncate">
+                      {post.title}
+                    </p>
+                    <p className="text-xs text-gray-500 mt-0.5">
+                      {post.type} ·{" "}
+                      {new Date(post.createdAt).toLocaleDateString("ga-IE", {
+                        day: "numeric",
+                        month: "short",
+                        year: "numeric",
+                      })}
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => handleDelete(post)}
+                    disabled={deletingId === post._id}
+                    className="inline-flex items-center gap-1.5 rounded-lg border border-red-300 bg-red-50 px-3 py-1.5 text-sm font-medium text-red-700 transition hover:bg-red-100 disabled:opacity-50"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                    {deletingId === post._id ? "Ag scriosadh..." : "Scrios"}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -31,6 +31,14 @@ export async function loginRequest(credentials) {
   return handleResponse(response, "Login failed");
 }
 
+export async function deletePost(id, token) {
+  const response = await fetch(`${API_BASE}/posts/${id}`, {
+    method: "DELETE",
+    headers: { Authorization: token },
+  });
+  return handleResponse(response, "Failed to delete post");
+}
+
 export function getUploadUrl(fileUrl) {
   if (!fileUrl) return "";
   if (!fileUrl.startsWith("http")) return `${API_BASE}/uploads/${fileUrl}`;
