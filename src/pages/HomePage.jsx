@@ -138,37 +138,42 @@ export default function HomePage() {
         <SectionCard className="border-2 border-[#f3722c]/40 bg-gradient-to-br from-[#fff6ec] to-[#fde4c8] p-5 sm:p-6 md:p-8">
           <div className="grid items-center gap-6 md:grid-cols-[260px_1fr] md:gap-10">
             <a
-              href="/iontral"
+              href="tel:0669155341"
               className="group block overflow-hidden rounded-2xl border border-[#e3c39a] bg-white shadow-md transition hover:shadow-xl"
-              aria-label="Foirm iarratais Clárúcháin 2026/2027"
+              aria-label="Cuir glaoch ar Iarscoil Scoil Mhaolchéadair"
             >
               <img
                 src={claruchanPoster}
-                alt="Póstaer Clárúcháin Scoil Mhaolchéadair 2026/2027"
+                alt="Póstaer Iarscoile Scoil Mhaolchéadair 2026/2027"
                 className="block h-auto w-full transition-transform duration-500 group-hover:scale-[1.02]"
                 loading="lazy"
               />
             </a>
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c2410c]">
-                Clárúchán 2026/2027
+                Iarscoil · 2026/2027
               </p>
               <h2 className="mt-2 text-2xl font-extrabold text-[#0f2748] sm:text-3xl md:text-4xl">
-                Ag glacadh le hiarratais anois
+                Ag glacadh le clárúcháin don Iarscoil
               </h2>
               <p className="mt-3 text-sm leading-7 text-[#3b3530] sm:text-base">
-                Tá {siteConfig.name} ag glacadh le hiarratais don scoilbhliain
-                2026/2027. Cuir ríomhphost nó déan glaoch chun foirm iarratais
-                a fháil agus chun bualadh isteach chuig an scoil.
+                Tá an Iarscoil sa Mhuiríoch ag glacadh le clárúcháin do
+                scoilbhliain 2026/2027. Lonnaithe sa scoil féin agus oscailte
+                go 5:30 gach lá scoile · Scéim NCS ar fáil. Cuir glaoch nó
+                ríomhphost chun do pháiste a chlárú.
               </p>
               <ul className="mt-4 space-y-1.5 text-sm text-[#1c3558]">
                 <li className="flex items-start gap-2">
                   <span aria-hidden className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#f3722c]" />
-                  Bunscoil Ghaeltachta ar an Muirígh
+                  Lonnaithe sa scoil féin
                 </li>
                 <li className="flex items-start gap-2">
                   <span aria-hidden className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#f3722c]" />
-                  Lá scoile go 5:30 ó Luan go hAoine · Scéim NCS ar fáil
+                  Lá go 5:30 ó Luan go hAoine
+                </li>
+                <li className="flex items-start gap-2">
+                  <span aria-hidden className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#f3722c]" />
+                  Scéim NCS (National Childcare Scheme) ar fáil
                 </li>
                 <li className="flex items-start gap-2">
                   <span aria-hidden className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-[#f3722c]" />
@@ -176,9 +181,9 @@ export default function HomePage() {
                 </li>
               </ul>
               <div className="mt-6 flex flex-wrap gap-3">
-                <Link to="/iontral" className="btn-accent">
-                  Déan Iarratas
-                </Link>
+                <a href="tel:0669155341" className="btn-accent">
+                  Cuir Glaoch · 066 915 5341
+                </a>
                 <Link to="/teangabhail" className="btn-secondary">
                   Cuir Ceist
                 </Link>
