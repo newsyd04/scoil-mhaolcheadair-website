@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import crest from "../assets/scoil-crest.png";
+import crest from "../assets/school-crest-final.png";
 import ProfileGrid from "../components/sections/ProfileGrid";
 import { staffMembers, supportTeams, boardMembers } from "../data/aboutData";
 

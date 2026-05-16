@@ -1,5 +1,5 @@
 import logo from "../assets/scoil-banner.png";
-import crest from "../assets/scoil-crest.png";
+import crest from "../assets/school-crest-final.png";
 
 export const siteConfig = {
   name: "Scoil Mhaolchéadair",

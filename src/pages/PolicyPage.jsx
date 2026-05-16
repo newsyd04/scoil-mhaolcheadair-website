@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { FileText } from "lucide-react";
-import crest from "../assets/scoil-crest.png";
+import crest from "../assets/school-crest-final.png";
 
 const PolicyPage = () => {
   useEffect(() => {
